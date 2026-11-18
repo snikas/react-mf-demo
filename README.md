@@ -2,7 +2,7 @@
 
 A small data-protection console built as micro-frontends. A **shell** (host) loads two independently built **remotes** at runtime with Webpack 5 Module Federation. They share one copy of React and talk to the shell only through a typed, versioned **shell SDK**.
 
-**Live demo:** `https://<your-user>.github.io/react-mf-demo/` (after you enable Pages; see [Deploy](#deploy-to-github-pages))
+**Live demo:** https://snikas.github.io/react-mf-demo/
 
 | What | Where |
 | --- | --- |
