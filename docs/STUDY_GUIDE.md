@@ -153,7 +153,7 @@ Practice with the app open: the "Workspace" page is MF composition.
 
 | | Route-split SPAs + runtime Web Components | Module Federation |
 | --- | --- | --- |
-| Composition | One SPA per path, behind a router/gateway | Many teams' modules on one page, one React tree |
+| Composition | Each path belongs to one product team's SPA; the platform team's shared Web Components render inside it, loaded at runtime. Platform and product share a screen, but two product teams don't. | The shell lays out the page; any team's module, including two product teams side by side, sits in it as a peer in one React tree |
 | Navigation between teams | Full page load | Client-side |
 | Shared deps | Each SPA bundles its own React | Negotiated singletons (React, SDK) |
 | Cross-app state | URL, cookies, backend | Shell store + typed event bus |
