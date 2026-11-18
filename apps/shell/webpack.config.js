@@ -6,7 +6,7 @@ module.exports = createConfig({
   dirname: __dirname,
   name: 'shell',
   port: 3000,
-  title: 'Protection Console (MF demo)',
+  title: 'React Micro-frontends Architecture Demo',
   define: (isProd) => ({
     __REMOTES_MANIFEST__: JSON.stringify(isProd ? 'remotes.json' : 'remotes.local.json'),
   }),

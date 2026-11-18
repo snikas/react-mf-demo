@@ -1,4 +1,4 @@
-# React 18 + Module Federation demo
+# React Micro-frontends Architecture Demo
 
 A small data-protection console built as micro-frontends. A **shell** (host) loads two independently built **remotes** at runtime with Webpack 5 Module Federation. They share one copy of React and talk to the shell only through a typed, versioned **shell SDK**.
 

@@ -33,7 +33,7 @@ export function HomePage() {
   const { registry } = useShell();
   return (
     <>
-      <h1>React 18 + Module Federation demo</h1>
+      <h1>React Micro-frontends Architecture Demo</h1>
       <p className="shell-lead">
         A host <strong>shell</strong> loads independently deployed <strong>remotes</strong> at
         runtime from an environment manifest (<code>{registry.environment}</code>). React is a
