@@ -1,0 +1,52 @@
+/*
+ * Design tokens as CSS custom properties. The shell sets data-theme on <html>;
+ * every module styles itself with var(--token), so a theme switch is a variable swap
+ * and no module needs to know which theme is active.
+ */
+:root,
+:root[data-theme='light'] {
+  color-scheme: light;
+  --color-bg: #f5f6f8;
+  --color-surface: #ffffff;
+  --color-surface-2: #eef1f5;
+  --color-text: #16202c;
+  --color-text-muted: #4f5d6f;
+  --color-border: #d3d9e2;
+  --color-accent: #2050c0;
+  --color-accent-contrast: #ffffff;
+  --color-success: #17693c;
+  --color-success-bg: #e3f4ea;
+  --color-danger: #b42318;
+  --color-danger-bg: #fdecea;
+  --color-warning: #7a5000;
+  --color-warning-bg: #fff4d6;
+  --color-focus: #2050c0;
+
+  --radius: 8px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --color-bg: #0f141b;
+  --color-surface: #171e27;
+  --color-surface-2: #212a36;
+  --color-text: #e6ebf2;
+  --color-text-muted: #a3afbf;
+  --color-border: #313c4b;
+  --color-accent: #7aa2ff;
+  --color-accent-contrast: #0b1220;
+  --color-success: #6fd69b;
+  --color-success-bg: #13301f;
+  --color-danger: #ff8a80;
+  --color-danger-bg: #3a1714;
+  --color-warning: #f3c560;
+  --color-warning-bg: #352a10;
+  --color-focus: #7aa2ff;
+}

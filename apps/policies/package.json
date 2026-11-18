@@ -1,0 +1,14 @@
+{
+  "name": "@demo/policies",
+  "version": "1.4.2",
+  "private": true,
+  "scripts": {
+    "dev": "webpack serve --mode development",
+    "build": "webpack --mode production"
+  },
+  "dependencies": {
+    "@demo/shell-sdk": "^1.2.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  }
+}

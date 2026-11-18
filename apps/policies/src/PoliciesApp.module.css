@@ -1,0 +1,117 @@
+/* CSS Module: class names are compiled to `policies__root--abc12`, so nothing here can
+   leak into the shell or other remotes. Colors come from the shell's design tokens. */
+.root {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+}
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.title {
+  margin: 0;
+  font-size: 1.1rem;
+}
+.subtitle {
+  margin: var(--space-4) 0 var(--space-2);
+  font-size: 1rem;
+}
+.muted {
+  color: var(--color-text-muted);
+}
+.mono {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+.pillEdit,
+.pillRead {
+  font-size: 0.75rem;
+  padding: 1px 8px;
+  border-radius: 999px;
+}
+.pillEdit {
+  background: var(--color-success-bg);
+  color: var(--color-success);
+}
+.pillRead {
+  background: var(--color-warning-bg);
+  color: var(--color-warning);
+}
+.tableWrap {
+  overflow-x: auto;
+  transition: opacity 120ms;
+}
+.preview .tableWrap {
+  max-height: 320px;
+  overflow-y: auto;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.table th,
+.table td {
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+}
+.table thead th {
+  position: sticky;
+  top: 0;
+  background: var(--color-surface);
+}
+.select,
+.input {
+  font: inherit;
+  color: inherit;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 4px 6px;
+}
+.select:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+.cleartext {
+  border-left: 4px solid var(--color-danger);
+}
+.masked {
+  border-left: 4px solid var(--color-warning);
+}
+.tokenized {
+  border-left: 4px solid var(--color-success);
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+.chaos {
+  margin-top: var(--space-4);
+}
+.chaos summary {
+  cursor: pointer;
+  color: var(--color-text-muted);
+}
+.dangerBtn {
+  font: inherit;
+  cursor: pointer;
+  border: 1px solid var(--color-danger);
+  color: var(--color-danger);
+  background: transparent;
+  border-radius: 6px;
+  padding: 6px 12px;
+}
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}

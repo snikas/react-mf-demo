@@ -1,0 +1,23 @@
+{
+  "environment": "local",
+  "remotes": [
+    {
+      "name": "policies",
+      "title": "Policies",
+      "url": "http://localhost:3001/remoteEntry.js",
+      "description": "React entry. Edits data-protection rules and publishes policy.rule.updated."
+    },
+    {
+      "name": "audit",
+      "title": "Audit log",
+      "url": "http://localhost:3002/remoteEntry.js",
+      "description": "mount(el, sdk) entry. Subscribes to every event on the shell bus."
+    },
+    {
+      "name": "reports",
+      "title": "Reports (broken)",
+      "url": "http://localhost:3009/remoteEntry.js",
+      "description": "Deliberately points at nothing, to show a failing remote isolated by its error boundary."
+    }
+  ]
+}

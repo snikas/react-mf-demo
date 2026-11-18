@@ -1,0 +1,456 @@
+/* Shell-owned global styles. Everything is prefixed `shell-` / `lab-`; remotes use CSS
+   Modules and never ship global resets. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 1.6rem;
+  margin: 0 0 var(--space-2);
+}
+h2 {
+  font-size: 1.15rem;
+  margin: 0 0 var(--space-2);
+}
+h3 {
+  font-size: 1rem;
+  margin: var(--space-4) 0 var(--space-2);
+}
+a {
+  color: var(--color-accent);
+}
+code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.shell {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas: 'header header' 'nav main';
+  min-height: 100vh;
+}
+
+.shell-skip {
+  position: absolute;
+  left: -9999px;
+  top: 8px;
+  z-index: 10;
+  background: var(--color-surface);
+  padding: var(--space-2) var(--space-3);
+}
+.shell-skip:focus {
+  left: 8px;
+}
+
+.shell-header {
+  grid-area: header;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-6);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.shell-brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 700;
+}
+.shell-brand__mark {
+  color: var(--color-accent);
+}
+
+.shell-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--color-surface-2);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+}
+
+.shell-nav {
+  grid-area: nav;
+  padding: var(--space-4);
+  border-right: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+.shell-nav ul {
+  list-style: none;
+  margin: 0 0 var(--space-3);
+  padding: 0;
+}
+.shell-nav a {
+  display: block;
+  padding: 6px 10px;
+  border-radius: 6px;
+  color: var(--color-text);
+  text-decoration: none;
+}
+.shell-nav a:hover {
+  background: var(--color-surface-2);
+}
+.shell-nav a.active {
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+}
+.shell-nav__heading {
+  margin: var(--space-3) 0 var(--space-1);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+}
+.shell-nav__env {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.shell-main {
+  grid-area: main;
+  padding: var(--space-6);
+  max-width: 1200px;
+  width: 100%;
+  min-width: 0;
+}
+.shell-main:focus {
+  outline: none;
+}
+
+.shell-lead {
+  font-size: 1.05rem;
+  max-width: 70ch;
+}
+.shell-muted {
+  color: var(--color-text-muted);
+}
+.shell-mono {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+.shell-wrap {
+  word-break: break-all;
+}
+.shell-takeaway {
+  border-left: 3px solid var(--color-accent);
+  padding-left: var(--space-3);
+  max-width: 80ch;
+}
+
+.shell-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.shell-field-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-right: var(--space-3);
+}
+
+select,
+input,
+button {
+  font: inherit;
+  color: inherit;
+}
+select,
+.lab-input {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 6px 8px;
+}
+
+.shell-btn {
+  cursor: pointer;
+  border: 1px solid var(--color-accent);
+  background: var(--color-accent);
+  color: var(--color-accent-contrast);
+  border-radius: 6px;
+  padding: 6px 12px;
+}
+.shell-btn--ghost {
+  background: transparent;
+  color: var(--color-accent);
+}
+
+.shell-card,
+.shell-slot {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-4);
+  margin-bottom: var(--space-4);
+  min-width: 0;
+}
+
+.shell-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: var(--space-4);
+  align-items: start;
+}
+
+.shell-callout {
+  border-radius: var(--radius);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid;
+}
+.shell-callout p {
+  margin: 0 0 var(--space-2);
+}
+.shell-callout--danger {
+  background: var(--color-danger-bg);
+  border-color: var(--color-danger);
+}
+.shell-callout--warning {
+  background: var(--color-warning-bg);
+  border-color: var(--color-warning);
+}
+
+.shell-skeleton__bar {
+  height: 14px;
+  margin: 10px 0;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--color-surface-2), var(--color-border), var(--color-surface-2));
+  background-size: 200% 100%;
+  animation: shell-shimmer 1.2s infinite linear;
+}
+@keyframes shell-shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .shell-skeleton__bar {
+    animation: none;
+  }
+}
+
+.shell-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.shell-pre {
+  background: var(--color-surface-2);
+  border-radius: 6px;
+  padding: var(--space-3);
+  overflow: auto;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  min-height: 2.5em;
+  max-height: 280px;
+}
+
+.shell-dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: var(--space-1) var(--space-4);
+}
+.shell-dl dt {
+  color: var(--color-text-muted);
+}
+.shell-dl dd {
+  margin: 0;
+}
+.shell-chip {
+  display: inline-block;
+  margin: 0 4px 4px 0;
+  padding: 0 6px;
+  border-radius: 4px;
+  background: var(--color-surface-2);
+}
+
+.shell-list {
+  padding-left: 1.2em;
+}
+.shell-list li {
+  margin-bottom: var(--space-1);
+}
+
+.shell-table-wrap {
+  overflow-x: auto;
+}
+.shell-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.shell-table th,
+.shell-table td {
+  text-align: left;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+}
+
+.shell-toaster {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 20;
+  max-width: min(380px, calc(100vw - 32px));
+}
+.shell-toast {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: start;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-accent);
+  box-shadow: 0 6px 20px rgb(0 0 0 / 0.15);
+}
+.shell-toast--success {
+  border-left-color: var(--color-success);
+}
+.shell-toast--error {
+  border-left-color: var(--color-danger);
+}
+.shell-toast button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.shell-arch {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: var(--space-4) 0;
+}
+.shell-arch__row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-2);
+}
+.shell-arch__box {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--space-3);
+  border-radius: var(--radius);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+.shell-arch__box span {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+.shell-arch__box--shell {
+  border: 2px solid var(--color-accent);
+}
+.shell-arch__arrow {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  padding-left: var(--space-3);
+}
+
+.shell-tour {
+  padding-left: 1.2em;
+}
+.shell-tour li {
+  margin-bottom: var(--space-3);
+}
+.shell-tour p {
+  margin: 2px 0 0;
+  color: var(--color-text-muted);
+  max-width: 75ch;
+}
+
+.lab-fieldset {
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  margin: 0 0 var(--space-3);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+.lab-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: var(--space-1);
+}
+.lab-input {
+  width: 100%;
+  max-width: 420px;
+}
+.lab-list {
+  columns: 2 240px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  max-height: 260px;
+  overflow: auto;
+  padding-left: 1.2em;
+}
+.lab-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.lab-chart svg {
+  width: 100%;
+  max-width: 420px;
+}
+
+@media (max-width: 760px) {
+  .shell {
+    grid-template-columns: 1fr;
+    grid-template-areas: 'header' 'nav' 'main';
+  }
+  .shell-nav {
+    border-right: 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .shell-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .shell-main,
+  .shell-header {
+    padding: var(--space-4);
+  }
+}
